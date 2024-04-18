@@ -1,0 +1,6 @@
+runtime: nodejs20
+service: wedens-elma-chapter-5-topic-1
+
+predeploy:
+  - npm install
+  - npx sequelize db:migrate
