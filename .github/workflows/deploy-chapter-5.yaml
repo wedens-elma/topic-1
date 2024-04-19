@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate env from secrets
-        working-directory: ./chapter-5/topic-1 # delete when the project is in the root
+
         run: |
           SECRETS="${{ secrets.CHAPTER_5_GCP_ENV }}"
           echo "$SECRETS" | tr ';' '\n' >> .env
@@ -27,6 +27,6 @@ jobs:
         uses: "google-github-actions/setup-gcloud@v2"
 
       - name: Deploy to App Engine
-        working-directory: ./chapter-5/topic-1
+
         run: |
           gcloud app deploy app.yaml --quiet
